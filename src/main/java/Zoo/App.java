@@ -11,9 +11,9 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        Acuatico acuatico = new Acuatico(25, 80, true, true, 10.0);
-        Terrestre terrestre = new Terrestre(30, 60, true, true);
-        Aviario aviario = new Aviario(20, 70, true, true, 10.0);
+        Acuatico acuatico = new Acuatico(25, 80, true, "Acuático", "acuatico", "Habitat acuático", true, 10.0);
+        Terrestre terrestre = new Terrestre(30, 60, true, "Terrestre", "terrestre", "Habitat terrestre", true);
+        Aviario aviario = new Aviario(20, 70, true, "Aviario", "aviario", "Habitat aviario", true, 15.0);
 
         AnimalTerrestres animalTerrestres = new AnimalTerrestres("Mamífero", "Tigre", "Carne", "Terrestre", "Agresivo", "Saludable", "1", true, true, true);
         AnimalAcuatico animalAcuatico = new AnimalAcuatico("Pez", "Dorado", "Algas", "Acuatico", "Tranquilo", "Saludable", "2", true, true, true, "Dulce");
@@ -49,6 +49,7 @@ public class App {
             System.out.println("1. Analizar hábitats");
             System.out.println("2. Interactuar con animales");
             System.out.println("3. Realizar un tour");
+            System.out.println("4. Mostrar información de un animal");
             System.out.println("9. Salir");
             System.out.print("Seleccione una opción: ");
 
@@ -114,6 +115,11 @@ public class App {
                             System.out.println("Opción no válida. Por favor, intente de nuevo.");
                             break;
                     }
+                    break;
+                case 4:
+                    System.out.print("Ingrese el ID del animal: ");
+                    String idAnimal = scanner.next();
+                    quiosco.mostrarInformacionAnimal(idAnimal);
                     break;
                 case 9:
                     System.out.println("Saliendo...");

@@ -6,8 +6,8 @@ public class Acuatico extends Habitat {
     private boolean puedenadar;
     private double profundidad;
 
-    public Acuatico(int temperatura, int humedad, boolean limpieza, boolean puedenadar, double profundidad) {
-        super(temperatura, humedad, limpieza, "Acuático");
+    public Acuatico(int temperatura, int humedad, boolean limpieza, String nombre, String id, String informacion, boolean puedenadar, double profundidad) {
+        super (temperatura, humedad, limpieza, nombre, id, informacion);
         this.puedenadar = puedenadar;
         this.profundidad = profundidad;
     }
