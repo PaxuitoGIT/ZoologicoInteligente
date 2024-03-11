@@ -7,48 +7,8 @@ public class AnimalTerrestres extends Animal{
     boolean pelaje;
     String tipo;
 
-    public AnimalTerrestres(String especie, String nombre, String alimentacion, String habitat, String comportamiento, String salud, String id, String tipo, int edad, double peso, boolean patas, boolean cola, boolean pelaje) {
-        super(especie, nombre, alimentacion, habitat, comportamiento, salud, id, true, true, true);
-        this.patas = patas;
-        this.cola = cola;
-        this.pelaje = pelaje;
-        this.tipo = tipo;
-    }
-
     public AnimalTerrestres(String especie, String nombre, String alimentacion, String habitat, String comportamiento, String salud, String id, boolean esSaludable, boolean seComporta, boolean seAlimenta) {
         super(especie, nombre, alimentacion, habitat, comportamiento, salud, id, esSaludable, seComporta, seAlimenta);
-    }
-
-    public boolean isPatas() {
-        return patas;
-    }
-
-    public void setPatas(boolean patas) {
-        this.patas = patas;
-    }
-
-    public boolean isCola() {
-        return cola;
-    }
-
-    public void setCola(boolean cola) {
-        this.cola = cola;
-    }
-
-    public boolean isPelaje() {
-        return pelaje;
-    }
-
-    public void setPelaje(boolean pelaje) {
-        this.pelaje = pelaje;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
     }
 
     @Override

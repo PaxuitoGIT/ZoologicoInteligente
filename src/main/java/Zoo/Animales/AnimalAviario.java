@@ -14,37 +14,6 @@ public class AnimalAviario extends Animal {
         this.tipo_aviario = tipo_aviario;
     }
 
-    public boolean isVuela() {
-        return vuela;
-    }
-
-    public void setVuela(boolean vuela) {
-        this.vuela = vuela;
-    }
-
-    public boolean isPlumaje() {
-        return plumaje;
-    }
-
-    public void setPlumaje(boolean plumaje) {
-        this.plumaje = plumaje;
-    }
-
-    public boolean isPico() {
-        return pico;
-    }
-
-    public void setPico(boolean pico) {
-        this.pico = pico;
-    }
-
-    public String getTipo_aviario() {
-        return tipo_aviario;
-    }
-
-    public void setTipo_aviario(String tipo_aviario) {
-        this.tipo_aviario = tipo_aviario;
-    }
 
     @Override
     public boolean equals(Object obj) {

@@ -28,54 +28,6 @@ public class Animal {
         this.seAlimenta = seAlimenta;
     }
 
-    public void buenaSalud(boolean esSaludable){
-        if(esSaludable){
-            System.out.println("es saludable");
-        }else{
-            System.out.println("no es saludable");
-        }
-    }
-
-    public void buenComportamiento(boolean seComporta){
-        if(seComporta){
-            System.out.println("se comporta");
-        }else{
-            System.out.println("no se comporta");
-        }
-    }
-
-    public void buenaAlimentacion(boolean seAlimenta){
-        if(seAlimenta){
-            System.out.println("se alimenta bien");
-        }else{
-            System.out.println("no se alimenta bien");
-        }
-    }
-
-    public boolean isEsSaludable() {
-        return esSaludable;
-    }
-
-    public void setEsSaludable(boolean esSaludable) {
-        this.esSaludable = esSaludable;
-    }
-
-    public boolean isSeComporta() {
-        return seComporta;
-    }
-
-    public void setSeComporta(boolean seComporta) {
-        this.seComporta = seComporta;
-    }
-
-    public boolean isSeAlimenta() {
-        return seAlimenta;
-    }
-
-    public void setSeAlimenta(boolean seAlimenta) {
-        this.seAlimenta = seAlimenta;
-    }
-
     public int getEdad() {
         return edad;
     }
@@ -162,19 +114,6 @@ public class Animal {
         return super.equals(obj);
     }
 
-    //Desarrollar funciones para registrar los animales, asegurando que se cumplan todas sus necesidades.
-    public void alimentar(){
-        System.out.println("El animal ha sido alimentado");
-    }
-    public void salud(){
-        System.out.println("El animal ha sido revisado por el veterinario");
-    }
-    public void comportamiento(){
-        System.out.println("El animal ha sido observado por el cuidador");
-    }
-    public void habitat(){
-        System.out.println("El animal ha sido ubicado en su habitat");
-    }
     public void setId(String id) {
         this.id = id;
     }
