@@ -8,7 +8,7 @@ public class Acuatico extends Habitat {
     private double profundidad;
 
     public Acuatico(int temperatura, int humedad, boolean limpieza, boolean puedenadar) {
-        super(temperatura, humedad, limpieza);
+        super(temperatura, humedad, limpieza, "Acuático");
         this.puedenadar = puedenadar;
         this.profundidad = profundidad;
     }

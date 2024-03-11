@@ -21,7 +21,7 @@ public class Monitoreo {
     }
 
     private void analizarHabitat(Habitat habitat) {
-        System.out.println("Analizando hábitat...");
+        System.out.println("Analizando hábitat " + habitat.getNombre() + "...");
         System.out.println("Temperatura: " + habitat.getTemperatura());
         System.out.println("Humedad: " + habitat.getHumedad());
         System.out.println("Limpieza: " + (habitat.isLimpieza() ? "Limpio" : "Sucio"));

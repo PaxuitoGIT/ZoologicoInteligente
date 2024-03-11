@@ -1,9 +1,41 @@
 package Zoo;
 
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+import Zoo.GestionHabitat.*;
+
+import java.util.Scanner;
+
+public class App {
+    public static void main(String[] args) {
+        Acuatico acuatico = new Acuatico(25, 80, true, true);
+        Terrestre terrestre = new Terrestre(30, 60, true, true);
+        Aviario aviario = new Aviario(20, 70, true, true, 10.0);
+
+        Monitoreo monitoreo = new Monitoreo();
+
+        monitoreo.registrarHabitat(acuatico);
+        monitoreo.registrarHabitat(terrestre);
+        monitoreo.registrarHabitat(aviario);
+
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("1. Analizar hábitats");
+            System.out.println("2. Salir");
+            System.out.print("Seleccione una opción: ");
+
+            int opcion = scanner.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    monitoreo.analizarHabitats();
+                    break;
+                case 2:
+                    System.out.println("Saliendo...");
+                    return;
+                default:
+                    System.out.println("Opción no válida. Por favor, intente de nuevo.");
+                    break;
+            }
+        }
     }
 }

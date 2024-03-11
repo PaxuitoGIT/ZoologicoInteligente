@@ -6,7 +6,7 @@ public class Terrestre extends Habitat {
     private String tipoDeSuelo;
 
     public Terrestre(int temperatura, int humedad, boolean limpieza, boolean puedeCaminar) {
-        super(temperatura, humedad, limpieza);
+        super(temperatura, humedad, limpieza, "Terrestre");
         this.puedeCaminar = puedeCaminar;
     }
 
