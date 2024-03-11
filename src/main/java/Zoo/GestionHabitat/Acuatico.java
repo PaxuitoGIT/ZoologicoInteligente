@@ -4,11 +4,13 @@ import Zoo.GestionHabitat.Habitat;
 
 public class Acuatico extends Habitat {
 
-    boolean puedenadar;
+    private boolean puedenadar;
+    private double profundidad;
 
     public Acuatico(int temperatura, int humedad, boolean limpieza, boolean puedenadar) {
         super(temperatura, humedad, limpieza);
         this.puedenadar = puedenadar;
+        this.profundidad = profundidad;
     }
 
     public boolean isPuedenadar() {
@@ -18,8 +20,6 @@ public class Acuatico extends Habitat {
     public void getPuedenadar(boolean puedenadar) {
         this.puedenadar = puedenadar;
     }
-
-    private double profundidad;
 
     public double getProfundidad() {
         return profundidad;

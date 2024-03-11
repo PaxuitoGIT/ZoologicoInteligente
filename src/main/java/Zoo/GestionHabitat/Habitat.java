@@ -1,9 +1,9 @@
 package Zoo.GestionHabitat;
 
 public class Habitat {
-    private double temperatura;
-    private double humedad;
-    private boolean limpieza;
+    protected double temperatura;
+    protected double humedad;
+    protected boolean limpieza;
 
     public Habitat(int temperatura, int humedad, boolean limpieza) {
         this.temperatura = temperatura;

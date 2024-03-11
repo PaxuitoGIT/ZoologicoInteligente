@@ -3,6 +3,7 @@ package Zoo.GestionHabitat;
 public class Terrestre extends Habitat {
 
     boolean puedeCaminar;
+    private String tipoDeSuelo;
 
     public Terrestre(int temperatura, int humedad, boolean limpieza, boolean puedeCaminar) {
         super(temperatura, humedad, limpieza);
@@ -13,16 +14,15 @@ public class Terrestre extends Habitat {
         return puedeCaminar;
     }
 
-    public void getPuedeCaminar(boolean puedeCaminar) {
+    public void setPuedeCaminar(boolean puedeCaminar) {
         this.puedeCaminar = puedeCaminar;
     }
 
-    private String tipoDeSuelo;
-    private String tipoDeSuelo() {
+    private String getTipoDeSuelo() {
         return tipoDeSuelo;
     }
 
-    public void cambiarTipoDeSuelo(String tipoDeSuelo) {
+    public void setTipoDeSuelo(String tipoDeSuelo) {
         this.tipoDeSuelo = tipoDeSuelo;
     }
 }
