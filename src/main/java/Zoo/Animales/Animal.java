@@ -1,6 +1,8 @@
 package Zoo.Animales;
 
 public class Animal {
+    protected int edad;
+    protected double peso;
     String especie;
     String nombre;
     String alimentacion;
@@ -73,6 +75,23 @@ public class Animal {
     public void setSeAlimenta(boolean seAlimenta) {
         this.seAlimenta = seAlimenta;
     }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
 
     public String getEspecie() {
         return especie;
