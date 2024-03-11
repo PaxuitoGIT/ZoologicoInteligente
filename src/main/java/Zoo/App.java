@@ -12,6 +12,7 @@ public class App {
 
         Monitoreo monitoreo = new Monitoreo();
 
+        monitoreo.configurarHabitat(terrestre, 30, 60, true);
         monitoreo.registrarHabitat(acuatico);
         monitoreo.configurarAcuatico(acuatico, true, 10.0);
         monitoreo.registrarHabitat(terrestre);

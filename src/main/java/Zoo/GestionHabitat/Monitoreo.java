@@ -16,8 +16,21 @@ public class Monitoreo {
 
     public void analizarHabitats() {
         for (Habitat habitat : habitats) {
+            if (habitat instanceof Aviario) {
+                Aviario aviario = (Aviario) habitat;
+                configurarAviario(aviario, true, 15.0);
+            } else if (habitat instanceof Acuatico) {
+                Acuatico acuatico = (Acuatico) habitat;
+                configurarAcuatico(acuatico, true, 10.0);
+            }
             analizarHabitat(habitat);
         }
+    }
+
+    public void configurarHabitat(Habitat habitat, int temperatura, int humedad, boolean limpieza) {
+        habitat.setTemperatura(temperatura);
+        habitat.setHumedad(humedad);
+        habitat.setLimpieza(limpieza);
     }
 
     public void configurarTerrestre(Terrestre terrestre, boolean puedeCaminar, String tipoDeSuelo) {
@@ -40,7 +53,6 @@ public class Monitoreo {
         System.out.println("Temperatura: " + habitat.getTemperatura());
         System.out.println("Humedad: " + habitat.getHumedad());
         System.out.println("Limpieza: " + (habitat.isLimpieza() ? "Limpio" : "Sucio"));
-
         if (habitat instanceof Terrestre) {
             Terrestre terrestre = (Terrestre) habitat;
             System.out.println("Puede caminar: " + (terrestre.isPuedeCaminar() ? "Sí" : "No"));
