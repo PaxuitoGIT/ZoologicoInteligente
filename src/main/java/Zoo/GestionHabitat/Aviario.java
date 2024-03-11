@@ -8,6 +8,7 @@ public class Aviario extends Habitat {
     public Aviario(int temperatura, int humedad, boolean limpieza, boolean puedenVolar, double altura) {
         super(temperatura, humedad, limpieza, "Aviario");
         this.puedenVolar = puedenVolar;
+        this.altura = altura;
     }
 
     public boolean isPuedenVolar() {

@@ -1,6 +1,5 @@
 package Zoo.GestionHabitat;
 
-import Zoo.GestionHabitat.Habitat;
 
 public class Acuatico extends Habitat {
 

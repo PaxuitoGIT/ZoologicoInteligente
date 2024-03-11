@@ -18,7 +18,7 @@ public class Terrestre extends Habitat {
         this.puedeCaminar = puedeCaminar;
     }
 
-    private String getTipoDeSuelo() {
+    public String getTipoDeSuelo() {
         return tipoDeSuelo;
     }
 

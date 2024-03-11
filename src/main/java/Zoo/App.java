@@ -14,6 +14,7 @@ public class App {
 
         monitoreo.registrarHabitat(acuatico);
         monitoreo.registrarHabitat(terrestre);
+        monitoreo.configurarTerrestre(terrestre, true, "Arenoso");
         monitoreo.registrarHabitat(aviario);
 
         Scanner scanner = new Scanner(System.in);

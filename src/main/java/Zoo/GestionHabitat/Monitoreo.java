@@ -20,6 +20,11 @@ public class Monitoreo {
         }
     }
 
+    public void configurarTerrestre(Terrestre terrestre, boolean puedeCaminar, String tipoDeSuelo) {
+        terrestre.setPuedeCaminar(puedeCaminar);
+        terrestre.setTipoDeSuelo(tipoDeSuelo);
+    }
+
     private void analizarHabitat(Habitat habitat) {
         System.out.println("Analizando hábitat " + habitat.getNombre() + "...");
         System.out.println("Temperatura: " + habitat.getTemperatura());
@@ -29,6 +34,7 @@ public class Monitoreo {
         if (habitat instanceof Terrestre) {
             Terrestre terrestre = (Terrestre) habitat;
             System.out.println("Puede caminar: " + (terrestre.isPuedeCaminar() ? "Sí" : "No"));
+            System.out.println("Tipo de suelo: " + terrestre.getTipoDeSuelo());
         } else if (habitat instanceof Aviario) {
             Aviario aviario = (Aviario) habitat;
             System.out.println("Pueden volar: " + (aviario.isPuedenVolar() ? "Sí" : "No"));
