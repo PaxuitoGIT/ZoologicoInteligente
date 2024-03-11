@@ -30,6 +30,11 @@ public class Monitoreo {
         aviario.ajustarAltura(altura);
     }
 
+    public void configurarAcuatico(Acuatico acuatico, boolean puedenNadar, double profundidad) {
+        acuatico.getPuedenadar(puedenNadar);
+        acuatico.ajustarProfundidad(profundidad);
+    }
+
     private void analizarHabitat(Habitat habitat) {
         System.out.println("Analizando hábitat " + habitat.getNombre() + "...");
         System.out.println("Temperatura: " + habitat.getTemperatura());

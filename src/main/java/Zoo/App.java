@@ -6,13 +6,14 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        Acuatico acuatico = new Acuatico(25, 80, true, true);
+        Acuatico acuatico = new Acuatico(25, 80, true, true, 10.0);
         Terrestre terrestre = new Terrestre(30, 60, true, true);
         Aviario aviario = new Aviario(20, 70, true, true, 10.0);
 
         Monitoreo monitoreo = new Monitoreo();
 
         monitoreo.registrarHabitat(acuatico);
+        monitoreo.configurarAcuatico(acuatico, true, 10.0);
         monitoreo.registrarHabitat(terrestre);
         monitoreo.configurarTerrestre(terrestre, true, "Arenoso");
         monitoreo.registrarHabitat(aviario);
