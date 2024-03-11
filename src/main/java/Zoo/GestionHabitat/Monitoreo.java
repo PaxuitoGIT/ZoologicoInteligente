@@ -25,6 +25,11 @@ public class Monitoreo {
         terrestre.setTipoDeSuelo(tipoDeSuelo);
     }
 
+    public void configurarAviario(Aviario aviario, boolean puedenVolar, double altura) {
+        aviario.setPuedenVolar(puedenVolar);
+        aviario.ajustarAltura(altura);
+    }
+
     private void analizarHabitat(Habitat habitat) {
         System.out.println("Analizando hábitat " + habitat.getNombre() + "...");
         System.out.println("Temperatura: " + habitat.getTemperatura());
