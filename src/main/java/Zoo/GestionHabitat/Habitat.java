@@ -5,12 +5,16 @@ public class Habitat {
     protected double humedad;
     protected boolean limpieza;
     protected String nombre;
+    protected String id;
+    protected String informacion;
 
-    public Habitat(int temperatura, int humedad, boolean limpieza, String nombre) {
+    public Habitat(int temperatura, int humedad, boolean limpieza, String nombre, String id, String informacion) {
         this.temperatura = temperatura;
         this.humedad = humedad;
         this.limpieza = limpieza;
         this.nombre = nombre;
+        this.id = id;
+        this.informacion = informacion;
     }
 
     public double getTemperatura() {
@@ -39,5 +43,11 @@ public class Habitat {
 
     public String getNombre() {
         return nombre;
+    }
+    public String getId() {
+        return id;
+    }
+    public String getInformacion() {
+        return informacion;
     }
 }

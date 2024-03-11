@@ -2,7 +2,11 @@ package Zoo;
 
 import Zoo.GestionHabitat.*;
 import Zoo.Animales.*;
+import Zoo.GestionZoo.*;
+import Zoo.GestionZoo.Visitantes.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class App {
@@ -15,6 +19,20 @@ public class App {
         AnimalAcuatico animalAcuatico = new AnimalAcuatico("Pez", "Dorado", "Algas", "Acuatico", "Tranquilo", "Saludable", "2", true, true, true, "Dulce");
         AnimalAviario animalAviario = new AnimalAviario("Ave", "Canario", "Semillas", "Aviario", "Tranquilo", "Saludable", "3", true, true, true, "Canario");
 
+        Tour tourNinos = new TourNinos();
+        Tour tourAmanteMamiferos = new TourAmanteMamiferos();
+
+        List<Animal> animales = new ArrayList<>();
+        animales.add(animalTerrestres);
+        animales.add(animalAcuatico);
+        animales.add(animalAviario);
+
+        List<Habitat> habitats = new ArrayList<>();
+        habitats.add(terrestre);
+        habitats.add(acuatico);
+        habitats.add(aviario);
+
+        Quiosco quiosco = new Quiosco(animales, habitats);
         Monitoreo monitoreo = new Monitoreo();
 
         monitoreo.configurarHabitat(terrestre, 30, 60, true);
@@ -30,7 +48,8 @@ public class App {
         while (true) {
             System.out.println("1. Analizar hábitats");
             System.out.println("2. Interactuar con animales");
-            System.out.println("3. Salir");
+            System.out.println("3. Realizar un tour");
+            System.out.println("9. Salir");
             System.out.print("Seleccione una opción: ");
 
             int opcion = scanner.nextInt();
@@ -78,6 +97,25 @@ public class App {
                     }
                     break;
                 case 3:
+                    System.out.println("1. Tour para niños");
+                    System.out.println("2. Tour para amantes de mamíferos");
+                    System.out.print("Seleccione una opción: ");
+
+                    int opcionTour = scanner.nextInt();
+
+                    switch (opcionTour) {
+                        case 1:
+                            tourNinos.realizarTour();
+                            break;
+                        case 2:
+                            tourAmanteMamiferos.realizarTour();
+                            break;
+                        default:
+                            System.out.println("Opción no válida. Por favor, intente de nuevo.");
+                            break;
+                    }
+                    break;
+                case 9:
                     System.out.println("Saliendo...");
                     return;
                 default:

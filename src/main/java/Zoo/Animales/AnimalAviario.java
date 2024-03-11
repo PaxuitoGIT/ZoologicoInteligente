@@ -7,7 +7,7 @@ public class AnimalAviario extends Animal {
     String tipo_aviario;
 
     public AnimalAviario(String especie, String nombre, String alimentacion, String habitat, String comportamiento, String salud, String id, boolean vuela, boolean plumaje, boolean pico, String tipo_aviario) {
-        super(especie, nombre, alimentacion, habitat, comportamiento, salud, id, true, true, true);
+        super(especie, nombre, alimentacion, habitat, comportamiento, salud, id, true, true, true, "Informacion del animal aviario");
         this.vuela = vuela;
         this.plumaje = plumaje;
         this.pico = pico;

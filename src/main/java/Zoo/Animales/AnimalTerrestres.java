@@ -8,7 +8,7 @@ public class AnimalTerrestres extends Animal{
     String tipo;
 
     public AnimalTerrestres(String especie, String nombre, String alimentacion, String habitat, String comportamiento, String salud, String id, boolean esSaludable, boolean seComporta, boolean seAlimenta) {
-        super(especie, nombre, alimentacion, habitat, comportamiento, salud, id, esSaludable, seComporta, seAlimenta);
+        super(especie, nombre, alimentacion, habitat, comportamiento, salud, id, esSaludable, seComporta, seAlimenta, "Informacion del animal terrestre");
     }
 
     @Override

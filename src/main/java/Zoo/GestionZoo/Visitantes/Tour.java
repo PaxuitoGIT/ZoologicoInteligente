@@ -1,4 +1,4 @@
-package Zoo.GestionZoo;
+package Zoo.GestionZoo.Visitantes;
 
 public interface Tour {
     void realizarTour();

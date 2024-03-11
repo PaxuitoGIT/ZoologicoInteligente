@@ -10,12 +10,13 @@ public class Animal {
     String comportamiento;
     String salud;
     String id;
+    String informacion;
     boolean esSaludable;
     boolean seComporta;
     boolean seAlimenta;
 
 
-    public Animal(String especie, String nombre, String alimentacion, String habitat, String comportamiento, String salud, String id, boolean esSaludable, boolean seComporta, boolean seAlimenta) {
+    public Animal(String especie, String nombre, String alimentacion, String habitat, String comportamiento, String salud, String id, boolean esSaludable, boolean seComporta, boolean seAlimenta, String informacion) {
         this.especie = especie;
         this.nombre = nombre;
         this.alimentacion = alimentacion;
@@ -26,6 +27,7 @@ public class Animal {
         this.esSaludable = esSaludable;
         this.seComporta = seComporta;
         this.seAlimenta = seAlimenta;
+        this.informacion = informacion;
     }
 
     public int getEdad() {
@@ -116,6 +118,10 @@ public class Animal {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getInformacion() {
+        return informacion;
     }
 
 }
