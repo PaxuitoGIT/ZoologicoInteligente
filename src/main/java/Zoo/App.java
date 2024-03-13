@@ -2,6 +2,7 @@ package Zoo;
 
 import Zoo.GestionHabitat.*;
 import Zoo.Animales.*;
+import Zoo.GestionZoo.DatosZoo;
 import Zoo.GestionZoo.Visitantes.*;
 import Zoo.GestionZoo.Administracion.*;
 import Zoo.GestionZoo.MantenimientoYSeguridad.*;

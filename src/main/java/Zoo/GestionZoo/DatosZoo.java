@@ -1,4 +1,4 @@
-package Zoo;
+package Zoo.GestionZoo;
 
 import Zoo.GestionHabitat.*;
 import Zoo.Animales.*;
