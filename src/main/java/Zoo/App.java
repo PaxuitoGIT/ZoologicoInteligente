@@ -2,13 +2,14 @@ package Zoo;
 
 import Zoo.GestionHabitat.*;
 import Zoo.Animales.*;
-import Zoo.GestionZoo.*;
 import Zoo.GestionZoo.Visitantes.*;
 import Zoo.GestionZoo.Administracion.*;
+import Zoo.GestionZoo.MantenimientoYSeguridad.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Date;
 
 public class App {
     public static void main(String[] args) {
@@ -57,7 +58,14 @@ public class App {
         administracionRecursos.agregarPedido(pedidoMedicamento);
         administracionRecursos.agregarPedido(pedidoMaterialLimpieza);
 
+        Mantenimiento mantenimiento = new Mantenimiento();
 
+        Tarea tarea1 = new Tarea("Limpieza de hábitat", new Date(), true, "Pendiente");
+        Tarea tarea2 = new Tarea("Revisión de seguridad", new Date(), false, "Pendiente");
+
+
+        mantenimiento.programarTarea(tarea1);
+        mantenimiento.programarTarea(tarea2);
 
         Monitoreo monitoreo = new Monitoreo();
 
@@ -77,6 +85,7 @@ public class App {
             System.out.println("3. Realizar un tour");
             System.out.println("4. Mostrar información de un animal");
             System.out.println("5. Administrar recursos");
+            System.out.println("6. Ver tareas de mantenimiento");
             System.out.println("9. Salir");
             System.out.print("Seleccione una opción: ");
 
@@ -178,6 +187,17 @@ public class App {
                         default:
                             System.out.println("Opción no válida. Por favor, intente de nuevo.");
                             break;
+                    }
+                    break;
+                case 6:
+                    List<Tarea> tareasPendientes = mantenimiento.obtenerTareasPendientes();
+                    System.out.println("Tareas de mantenimiento pendientes:");
+                    for (Tarea tarea : tareasPendientes) {
+                        System.out.println("Descripción: " + tarea.getDescripcion());
+                        System.out.println("Fecha programada: " + tarea.getFechaProgramada());
+                        System.out.println("Es urgente:" + (tarea.isEsUrgente() ? "Sí" : "No"));
+                        System.out.println("Estado: " + tarea.getEstado());
+                        System.out.println();
                     }
                     break;
                 case 9:
