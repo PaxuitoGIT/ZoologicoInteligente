@@ -5,9 +5,13 @@ import java.util.List;
 
 public class AdministracionRecursos {
     private List<Recurso> recursos;
+    private List<Pedido> pedidos;
+    private List<Proveedor> proveedores;
 
     public AdministracionRecursos() {
         this.recursos = new ArrayList<>();
+        this.pedidos = new ArrayList<>();
+        this.proveedores = new ArrayList<>();
     }
 
     public void agregarRecurso(Recurso recurso) {
@@ -25,5 +29,21 @@ public class AdministracionRecursos {
             }
         }
         return null;
+    }
+
+    public void agregarPedido(Pedido pedido) {
+        this.pedidos.add(pedido);
+    }
+
+    public void eliminarPedido(Pedido pedido) {
+        this.pedidos.remove(pedido);
+    }
+
+    public void agregarProveedor(Proveedor proveedor) {
+        this.proveedores.add(proveedor);
+    }
+
+    public void eliminarProveedor(Proveedor proveedor) {
+        this.proveedores.remove(proveedor);
     }
 }
