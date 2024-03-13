@@ -9,5 +9,6 @@ public class TourAmanteAcuaticos implements Tour {
         System.out.println("Después, iremos al área de los animales de agua salada, donde podrán ver tiburones y mantarrayas.");
         System.out.println("Finalmente, tendremos una actividad de alimentación de animales. Recuerden, siempre debemos respetar a los animales y seguir las instrucciones del guía.");
         System.out.println("¡Esperamos que disfruten el tour!");
+        System.out.println();
     }
 }

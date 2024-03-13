@@ -9,5 +9,6 @@ public class TourAmanteMamiferos implements Tour {
         System.out.println("Después, iremos al área de los marsupiales, donde podrán ver canguros y koalas.");
         System.out.println("Finalmente, tendremos una actividad de alimentación de mamíferos. Recuerden, siempre debemos respetar a los animales y seguir las instrucciones del guía.");
         System.out.println("¡Esperamos que disfruten el tour!");
+        System.out.println();
     }
 }

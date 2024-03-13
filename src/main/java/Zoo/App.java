@@ -72,7 +72,8 @@ public class App {
                     System.out.println("3. Administrar recursos");
                     System.out.println("4. Ver tareas de mantenimiento");
                     System.out.println("5. Ver cámaras y sensores");
-                    System.out.println("9. Salir");
+                    System.out.println("9. Volver al menú principal");
+                    System.out.println("0. Salir");
                     System.out.print("Seleccione una opción: ");
                     System.out.println();
 
@@ -227,6 +228,10 @@ public class App {
                             System.out.println();
                             break;
                         case 9:
+                            System.out.println("Volviendo...");
+                            System.out.println();
+                            break;
+                        case 0:
                             System.out.println("Saliendo...");
                             return;
                         default:
@@ -234,12 +239,17 @@ public class App {
                             System.out.println();
                             break;
                     }
+                    if (opcionEmpleado == 9) {
+                        break;
+                    }
                 }
             }  else if (opcion == 2) {
+                while (true) {
                     System.out.println("1. Realizar tour");
                     System.out.println("2. Mostrar información de animales");
                     System.out.println("3. Mostrar información de hábitats");
-                    System.out.println("9. Salir");
+                    System.out.println("9. Volver al menú principal");
+                    System.out.println("0. Salir");
                     System.out.print("Seleccione una opción: ");
                 System.out.println();
 
@@ -346,6 +356,10 @@ public class App {
                             System.out.println();
                             break;
                         case 9:
+                            System.out.println("Volviendo...");
+                            System.out.println();
+                            break;
+                        case 0:
                             System.out.println("Saliendo...");
                             return;
                         default:
@@ -353,7 +367,12 @@ public class App {
                             System.out.println();
                             break;
                     }
-                } else {
+
+                 if (opcionVisitante == 9) {
+                    break;
+                 }
+                }
+            } else {
                     System.out.println("Opción no válida. Por favor, intente de nuevo.");
                 System.out.println();
                 }

@@ -9,5 +9,6 @@ public class TourAmanteAviario implements Tour {
         System.out.println("Después, iremos al área de los pájaros acuáticos, donde podrán ver patos y flamencos.");
         System.out.println("Finalmente, tendremos una actividad de alimentación de aves. Recuerden, siempre debemos respetar a los animales y seguir las instrucciones del guía.");
         System.out.println("¡Esperamos que disfruten el tour!");
+        System.out.println();
     }
 }
