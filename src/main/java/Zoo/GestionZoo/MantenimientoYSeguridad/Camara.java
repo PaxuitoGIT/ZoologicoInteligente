@@ -1,13 +1,17 @@
 package Zoo.GestionZoo.MantenimientoYSeguridad;
 
 public class Camara {
-    private final String location;
+    public String location;
 
     public Camara(String location) {
         this.location = location;
     }
 
-    public void record() {
+    public String getLocation() {
+        return this.location;
+    }
+
+    public void activar() {
         System.out.println("La cámara en " + location + " está grabando...");
     }
 }

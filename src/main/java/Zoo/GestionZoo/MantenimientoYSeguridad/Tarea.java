@@ -1,11 +1,12 @@
 package Zoo.GestionZoo.MantenimientoYSeguridad;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class Tarea {
-    private String descripcion;
-    private Date fechaProgramada;
-    private boolean esUrgente;
+    private final String descripcion;
+    private final Date fechaProgramada;
+    private final boolean esUrgente;
     private String estado;
     private Date fechaFinalizacion;
 
@@ -13,31 +14,19 @@ public class Tarea {
         this.descripcion = descripcion;
         this.fechaProgramada = fechaProgramada;
         this.esUrgente = esUrgente;
-        this.estado = "Pendiente";
+        this.estado = estado;
     }
 
     public String getDescripcion() {
         return descripcion;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
     public Date getFechaProgramada() {
         return fechaProgramada;
     }
 
-    public void setFechaProgramada(Date fechaProgramada) {
-        this.fechaProgramada = fechaProgramada;
-    }
-
     public boolean isEsUrgente() {
         return esUrgente;
-    }
-
-    public void setEsUrgente(boolean esUrgente) {
-        this.esUrgente = esUrgente;
     }
 
     public String getEstado() {
@@ -52,7 +41,9 @@ public class Tarea {
         return fechaFinalizacion;
     }
 
-    public void setFechaFinalizacion(Date fechaFinalizacion) {
-        this.fechaFinalizacion = fechaFinalizacion;
+    public void setFechaFinalizacion(Date date) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE, 1);
+        this.fechaFinalizacion = calendar.getTime();
     }
 }

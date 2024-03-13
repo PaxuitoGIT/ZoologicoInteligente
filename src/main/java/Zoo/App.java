@@ -61,11 +61,22 @@ public class App {
         Mantenimiento mantenimiento = new Mantenimiento();
 
         Tarea tarea1 = new Tarea("Limpieza de hábitat", new Date(), true, "Pendiente");
+        tarea1.setFechaFinalizacion(new Date());
         Tarea tarea2 = new Tarea("Revisión de seguridad", new Date(), false, "Pendiente");
+        tarea2.setFechaFinalizacion(new Date());
 
 
         mantenimiento.programarTarea(tarea1);
         mantenimiento.programarTarea(tarea2);
+
+        Seguridad seguridad = new Seguridad();
+        Camara camara = new Camara("Entrada");
+        Sensor sensor = new Sensor("Entrada");
+
+        seguridad.monitorZoo();
+        camara.activar();
+        sensor.activar();
+
 
         Monitoreo monitoreo = new Monitoreo();
 
@@ -86,6 +97,7 @@ public class App {
             System.out.println("4. Mostrar información de un animal");
             System.out.println("5. Administrar recursos");
             System.out.println("6. Ver tareas de mantenimiento");
+            System.out.println("7. Monitorear seguridad");
             System.out.println("9. Salir");
             System.out.print("Seleccione una opción: ");
 
@@ -174,7 +186,7 @@ public class App {
                             break;
                         case 2:
                             System.out.println("Proveedores:");
-                            for (Proveedor proveedor2 : administracionRecursos.getProveedores()) {
+                            for (Proveedor proveedor0 : administracionRecursos.getProveedores()) {
                                 System.out.println("Nombre: " + proveedor.getNombre());
                             }
                             break;
@@ -197,8 +209,17 @@ public class App {
                         System.out.println("Fecha programada: " + tarea.getFechaProgramada());
                         System.out.println("Es urgente:" + (tarea.isEsUrgente() ? "Sí" : "No"));
                         System.out.println("Estado: " + tarea.getEstado());
+                        System.out.println("Fecha de finalización: " + tarea.getFechaFinalizacion());
                         System.out.println();
                     }
+                    break;
+                case 7:
+                    System.out.println("Cámara y sensor activados");
+                    System.out.println();
+                    seguridad.monitorZoo();
+                    camara.activar();
+                    sensor.activar();
+                    System.out.println();
                     break;
                 case 9:
                     System.out.println("Saliendo...");
