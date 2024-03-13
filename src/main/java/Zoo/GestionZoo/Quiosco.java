@@ -13,14 +13,14 @@ public class Quiosco {
         this.habitats = habitats;
     }
 
-    public void mostrarInformacionAnimal(String idAnimal) {
+    public void mostrarInformacionAnimalCompleta(String id) {
         for (Animal animal : animales) {
-            if (animal.getId().equals(idAnimal)) {
-                System.out.println(animal.getInformacion());
+            if (animal.getId().equals(id)) {
+                animal.mostrarInformacion();
                 return;
             }
         }
-        System.out.println("Lo siento, no se encontró ningún animal con el ID proporcionado.");
+        System.out.println("No se encontró un animal con el ID proporcionado.");
     }
 
     public void mostrarInformacionHabitat(String idHabitat) {

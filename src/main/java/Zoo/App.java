@@ -119,7 +119,7 @@ public class App {
                 case 4:
                     System.out.print("Ingrese el ID del animal: ");
                     String idAnimal = scanner.next();
-                    quiosco.mostrarInformacionAnimal(idAnimal);
+                    quiosco.mostrarInformacionAnimalCompleta(idAnimal);
                     break;
                 case 9:
                     System.out.println("Saliendo...");

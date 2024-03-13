@@ -30,6 +30,15 @@ public class Animal {
         this.informacion = informacion;
     }
 
+    public void mostrarInformacion() {
+        System.out.println("Especie: " + getEspecie());
+        System.out.println("Nombre: " + getNombre());
+        System.out.println("Alimentación: " + getAlimentacion());
+        System.out.println("Hábitat: " + getHabitat());
+        System.out.println("Comportamiento: " + getComportamiento());
+        System.out.println("Salud: " + getSalud());
+    }
+
     public int getEdad() {
         return edad;
     }
