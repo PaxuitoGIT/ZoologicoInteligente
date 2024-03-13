@@ -190,13 +190,19 @@ public class App {
                                     }
                                     break;
                                 case 2:
-                                    System.out.println("Has seleccionado el animal acuático: " + animalAcuatico.getNombre());
-                                    System.out.println("Especie: " + animalAcuatico.getEspecie());
-                                    System.out.println("Alimentación: " + animalAcuatico.getAlimentacion());
-                                    System.out.println("Hábitat: " + animalAcuatico.getHabitat());
-                                    System.out.println("Comportamiento: " + animalAcuatico.getComportamiento());
-                                    System.out.println("Salud: " + animalAcuatico.getSalud());
-                                    System.out.println();
+                                    System.out.println("Animales acuáticos:");
+                                    for (Animal animal : animales) {
+                                        if (animal instanceof AnimalAcuatico) {
+                                            AnimalAcuatico animalAcuatico = (AnimalAcuatico) animal;
+                                            System.out.println("Has seleccionado el animal acuático: " + animalAcuatico.getNombre());
+                                            System.out.println("Especie: " + animalAcuatico.getEspecie());
+                                            System.out.println("Alimentación: " + animalAcuatico.getAlimentacion());
+                                            System.out.println("Hábitat: " + animalAcuatico.getHabitat());
+                                            System.out.println("Comportamiento: " + animalAcuatico.getComportamiento());
+                                            System.out.println("Salud: " + animalAcuatico.getSalud());
+                                            System.out.println();
+                                        }
+                                    }
                                     break;
                                 case 3:
                                     System.out.println("Has seleccionado el animal de aviario: " + animalAviario.getNombre());
