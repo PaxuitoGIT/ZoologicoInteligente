@@ -13,17 +13,17 @@ import java.util.Date;
 
 public class App {
     public static void main(String[] args) {
+        // Crearemos las instancias del hábitat aquí
         Acuatico acuatico = new Acuatico(25, 80, true, "Acuático", "acuatico", "Habitat acuático", true, 10.0);
         Terrestre terrestre = new Terrestre(30, 60, true, "Terrestre", "terrestre", "Habitat terrestre", true);
         Aviario aviario = new Aviario(20, 70, true, "Aviario", "aviario", "Habitat aviario", true, 15.0);
 
+        // Crearemos las instancias de los animales aquí
         AnimalTerrestres animalTerrestres = new AnimalTerrestres("Mamífero", "Tigre", "Carne", "Terrestre", "Agresivo", "Saludable", "1", true, true, true);
         AnimalAcuatico animalAcuatico = new AnimalAcuatico("Pez", "Dorado", "Algas", "Acuatico", "Tranquilo", "Saludable", "2", true, true, true, "Dulce");
         AnimalAviario animalAviario = new AnimalAviario("Ave", "Canario", "Semillas", "Aviario", "Tranquilo", "Saludable", "3", true, true, true, "Canario");
 
-        Tour tourNinos = new TourNinos();
-        Tour tourAmanteMamiferos = new TourAmanteMamiferos();
-
+        // Aquí crearemos la lista de animales y hábitats
         List<Animal> animales = new ArrayList<>();
         animales.add(animalTerrestres);
         animales.add(animalAcuatico);
@@ -34,30 +34,37 @@ public class App {
         habitats.add(acuatico);
         habitats.add(aviario);
 
+        // Crearemos las instancias de los tours aquí
+        Tour tourNinos = new TourNinos();
+        Tour tourAmanteMamiferos = new TourAmanteMamiferos();
+
+        //Aquí el quiosco para el visitante
         Quiosco quiosco = new Quiosco(animales, habitats);
 
+        // Aquí el administrador de recursos
+        // Para ahorrar espacio, se ha colocado el método getAdministracionRecursos() en la parte inferior de este archivo
         AdministracionRecursos administracionRecursos = getAdministracionRecursos();
 
+        // Aquí para las tareas de mantenimiento
         Mantenimiento mantenimiento = new Mantenimiento();
 
+        // Creamos las instancias de las tareas
         Tarea tarea1 = new Tarea("Limpieza de hábitat", new Date(), true, "Pendiente");
         tarea1.setFechaFinalizacion(new Date());
         Tarea tarea2 = new Tarea("Revisión de seguridad", new Date(), false, "Pendiente");
         tarea2.setFechaFinalizacion(new Date());
 
-
         mantenimiento.programarTarea(tarea1);
         mantenimiento.programarTarea(tarea2);
 
+        // Aquí la seguridad
         Seguridad seguridad = new Seguridad();
+
+        // Creamos las instancias de la cámara y el sensor especificando la localización
         Camara camara = new Camara("Entrada");
         Sensor sensor = new Sensor("Entrada");
 
-        seguridad.monitorZoo();
-        camara.activar();
-        sensor.activar();
-
-
+        // Aquí el monitoreo para el empleado
         Monitoreo monitoreo = new Monitoreo();
 
         monitoreo.configurarHabitat(terrestre, 30, 60, true);
@@ -68,13 +75,13 @@ public class App {
         monitoreo.registrarHabitat(aviario);
         monitoreo.configurarAviario(aviario, true, 15.0);
 
+        // El menú principal
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("1.Empleado");
+            System.out.println("1.Empleado"); //IMPORTANTE: La contraseña es "admin"
             System.out.println("2.Visitante");
             System.out.println("Seleccione una opción: ");
-            System.out.println();
 
             int opcion = scanner.nextInt();
 
