@@ -11,15 +11,15 @@ import java.util.*;
 public class App {
     public static void main(String[] args) {
         // Crearemos las instancias del hábitat aquí
-        Acuatico habitatMarinos = new Acuatico(30, 70, true, "Acuatico", "Habitat Marinos", "Habitat para animales marinos", true, 15.0);
-        Acuatico habitatAguaDulce = new Acuatico(25, 75, true, "Acuatico", "Habitat Agua Dulce", "Habitat para animales de agua dulce", true, 10.0);
-        Acuatico habitatAguaSalada = new Acuatico(35, 65, true, "Acuatico", "Habitat Agua Salada", "Habitat para animales de agua salada", true, 20.0);
-        Terrestre habitatFelinos = new Terrestre(40, 60, true, "Terrestre", "Habitat Felinos", "Habitat para grandes felinos", true);
-        Terrestre habitatPrimates = new Terrestre(35, 70, true, "Terrestre", "Habitat Primates", "Habitat para primates", true);
-        Terrestre habitatMarsupiales = new Terrestre(30, 65, true, "Terrestre", "Habitat Marsupiales", "Habitat para marsupiales", true);
-        Aviario habitatAvesRapaces = new Aviario(20, 70, true, "Aviario", "Habitat Aves Rapaces", "Habitat para aves rapaces", true, 15.0);
-        Aviario habitatPajarosExoticos = new Aviario(25, 75, true, "Aviario", "Habitat Pajaros Exoticos", "Habitat para pájaros exóticos", true, 10.0);
-        Aviario habitatPajarosAcuaticos = new Aviario(30, 65, true, "Aviario", "Habitat Pajaros Acuaticos", "Habitat para pájaros acuáticos", true, 20.0);
+        Acuatico habitatMarinos = new Acuatico(30, 70, true, "Hábitat Acuatico", "100", "Habitat para animales marinos", true, 15.0);
+        Acuatico habitatAguaDulce = new Acuatico(25, 75, true, "Hábitat Acuatico", "101", "Habitat para animales de agua dulce", true, 10.0);
+        Acuatico habitatAguaSalada = new Acuatico(35, 65, true, "Hábitat Acuatico", "102", "Habitat para animales de agua salada", true, 20.0);
+        Terrestre habitatFelinos = new Terrestre(40, 60, true, "Hábitat Terrestre", "103", "Habitat para grandes felinos", true);
+        Terrestre habitatPrimates = new Terrestre(35, 70, true, "Hábitat Terrestre", "104", "Habitat para primates", true);
+        Terrestre habitatMarsupiales = new Terrestre(30, 65, true, "Hábitat Terrestre", "105", "Habitat para marsupiales", true);
+        Aviario habitatAvesRapaces = new Aviario(20, 70, true, "Hábitat Aviario", "106", "Habitat para aves rapaces", true, 15.0);
+        Aviario habitatPajarosExoticos = new Aviario(25, 75, true, "Hábitat Aviario", "107", "Habitat para pájaros exóticos", true, 10.0);
+        Aviario habitatPajarosAcuaticos = new Aviario(30, 65, true, "Hábitat Aviario", "108", "Habitat para pájaros acuáticos", true, 20.0);
 
         // Crearemos las instancias de los animales terrestres aquí
         AnimalTerrestres tigre = new AnimalTerrestres("Mamífero", "Tigre", "Carne", "Terrestre", "Agresivo", "Saludable", "1", true, true, true);
@@ -402,6 +402,25 @@ public class App {
                             }
                             break;
                         case 2:
+                            System.out.println("Lista de animales por hábitat:");
+                            System.out.println("Animales terrestres:");
+                            for (Animal animal : animales) {
+                                if (animal instanceof AnimalTerrestres) {
+                                    System.out.println("ID: " + animal.getId() + ", Nombre: " + animal.getNombre());
+                                }
+                            }
+                            System.out.println("Animales acuáticos:");
+                            for (Animal animal : animales) {
+                                if (animal instanceof AnimalAcuatico) {
+                                    System.out.println("ID: " + animal.getId() + ", Nombre: " + animal.getNombre());
+                                }
+                            }
+                            System.out.println("Animales de aviario:");
+                            for (Animal animal : animales) {
+                                if (animal instanceof AnimalAviario) {
+                                    System.out.println("ID: " + animal.getId() + ", Nombre: " + animal.getNombre());
+                                }
+                            }
                             System.out.print("Ingrese el ID del animal: ");
                             String idAnimal = scanner.next();
                             System.out.println();
