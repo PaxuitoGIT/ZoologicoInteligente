@@ -15,14 +15,26 @@ public class App {
         Terrestre terrestre = new Terrestre(30, 60, true, "Terrestre", "terrestre", "Habitat terrestre", true);
         Aviario aviario = new Aviario(20, 70, true, "Aviario", "aviario", "Habitat aviario", true, 15.0);
 
-        // Crearemos las instancias de los animales aquí
-        AnimalTerrestres animalTerrestres = new AnimalTerrestres("Mamífero", "Tigre", "Carne", "Terrestre", "Agresivo", "Saludable", "1", true, true, true);
+        // Crearemos las instancias de los animales terrestres aquí
+        AnimalTerrestres tigre = new AnimalTerrestres("Mamífero", "Tigre", "Carne", "Terrestre", "Agresivo", "Saludable", "1", true, true, true);
+        AnimalTerrestres leon = new AnimalTerrestres("Mamífero", "León", "Carne", "Terrestre", "Agresivo", "Saludable", "4", true, true, true);
+        AnimalTerrestres mono = new AnimalTerrestres("Mamífero", "Mono", "Frutas", "Terrestre", "Tranquilo", "Saludable", "5", true, true, true);
+        AnimalTerrestres gorila = new AnimalTerrestres("Mamífero", "Gorila", "Frutas y Hojas", "Terrestre", "Agresivo", "Saludable", "6", true, true, true);
+        AnimalTerrestres canguro = new AnimalTerrestres("Mamífero", "Canguro", "Hierba", "Terrestre", "Tranquilo", "Saludable", "7", true, true, true);
+        AnimalTerrestres koala = new AnimalTerrestres("Mamífero", "Koala", "Hojas de Eucalipto", "Terrestre", "Tranquilo", "Saludable", "8", true, true, true);
+
+
         AnimalAcuatico animalAcuatico = new AnimalAcuatico("Pez", "Dorado", "Algas", "Acuatico", "Tranquilo", "Saludable", "2", true, true, true, "Dulce");
         AnimalAviario animalAviario = new AnimalAviario("Ave", "Canario", "Semillas", "Aviario", "Tranquilo", "Saludable", "3", true, true, true, "Canario");
 
         // Aquí crearemos la lista de animales y hábitats
         List<Animal> animales = new ArrayList<>();
-        animales.add(animalTerrestres);
+        animales.add(tigre);
+        animales.add(leon);
+        animales.add(mono);
+        animales.add(gorila);
+        animales.add(canguro);
+        animales.add(koala);
         animales.add(animalAcuatico);
         animales.add(animalAviario);
 
@@ -146,13 +158,19 @@ public class App {
 
                             switch (opcionAnimales) {
                                 case 1:
-                                    System.out.println("Has seleccionado el animal terrestre: " + animalTerrestres.getNombre());
-                                    System.out.println("Especie: " + animalTerrestres.getEspecie());
-                                    System.out.println("Alimentación: " + animalTerrestres.getAlimentacion());
-                                    System.out.println("Hábitat: " + animalTerrestres.getHabitat());
-                                    System.out.println("Comportamiento: " + animalTerrestres.getComportamiento());
-                                    System.out.println("Salud: " + animalTerrestres.getSalud());
-                                    System.out.println();
+                                    System.out.println("Animales terrestres:");
+                                    for (Animal animal : animales) {
+                                        if (animal instanceof AnimalTerrestres) {
+                                            AnimalTerrestres animalTerrestre = (AnimalTerrestres) animal;
+                                            System.out.println("Has seleccionado el animal terrestre: " + animalTerrestre.getNombre());
+                                            System.out.println("Especie: " + animalTerrestre.getEspecie());
+                                            System.out.println("Alimentación: " + animalTerrestre.getAlimentacion());
+                                            System.out.println("Hábitat: " + animalTerrestre.getHabitat());
+                                            System.out.println("Comportamiento: " + animalTerrestre.getComportamiento());
+                                            System.out.println("Salud: " + animalTerrestre.getSalud());
+                                            System.out.println();
+                                        }
+                                    }
                                     break;
                                 case 2:
                                     System.out.println("Has seleccionado el animal acuático: " + animalAcuatico.getNombre());
