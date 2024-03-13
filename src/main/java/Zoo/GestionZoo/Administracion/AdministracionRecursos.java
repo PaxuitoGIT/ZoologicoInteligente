@@ -30,32 +30,11 @@ public class AdministracionRecursos {
         this.recursos.add(recurso);
     }
 
-    public void eliminarRecurso(Recurso recurso) {
-        this.recursos.remove(recurso);
-    }
-
-    public Recurso buscarRecurso(String nombre) {
-        for (Recurso recurso : this.recursos) {
-            if (recurso.getNombre().equals(nombre)) {
-                return recurso;
-            }
-        }
-        return null;
-    }
-
     public void agregarPedido(Pedido pedido) {
         this.pedidos.add(pedido);
     }
 
-    public void eliminarPedido(Pedido pedido) {
-        this.pedidos.remove(pedido);
-    }
-
     public void agregarProveedor(Proveedor proveedor) {
         this.proveedores.add(proveedor);
-    }
-
-    public void eliminarProveedor(Proveedor proveedor) {
-        this.proveedores.remove(proveedor);
     }
 }

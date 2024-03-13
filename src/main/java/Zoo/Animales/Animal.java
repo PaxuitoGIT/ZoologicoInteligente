@@ -129,8 +129,4 @@ public class Animal {
         this.id = id;
     }
 
-    public String getInformacion() {
-        return informacion;
-    }
-
 }

@@ -20,17 +20,17 @@ public class Recurso {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
-    class Alimento extends Recurso {
+    public static class Alimento extends Recurso {
         public Alimento(String nombre, int cantidad) {
             super(nombre, cantidad);
         }
     }
-    class Medicamento extends Recurso {
+    public static class Medicamento extends Recurso {
         public Medicamento(String nombre, int cantidad) {
             super(nombre, cantidad);
         }
     }
-    class Equipamiento extends Recurso {
+    public static class Equipamiento extends Recurso {
         public Equipamiento(String nombre, int cantidad) {
             super(nombre, cantidad);
         }

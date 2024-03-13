@@ -35,23 +35,23 @@ public class App {
 
         Quiosco quiosco = new Quiosco(animales, habitats);
 
-        Recurso alimento = new Recurso("Alimento", 100);
-        Recurso medicamento = new Recurso("Medicamento", 50);
-        Recurso materialLimpieza = new Recurso("Material de limpieza", 200);
+        Recurso.Alimento Alimento = new Recurso.Alimento("Alimento", 100);
+        Recurso.Medicamento Medicamento = new Recurso.Medicamento("Medicamento", 50);
+        Recurso.Equipamiento Equipamiento = new Recurso.Equipamiento("Material de limpieza", 200);
 
         Proveedor proveedor = new Proveedor("Proveedor 1");
-        proveedor.agregarRecurso(alimento);
-        proveedor.agregarRecurso(medicamento);
-        proveedor.agregarRecurso(materialLimpieza);
+        proveedor.agregarRecurso(Alimento);
+        proveedor.agregarRecurso(Medicamento);
+        proveedor.agregarRecurso(Equipamiento);
 
-        Pedido pedidoAlimento = new Pedido(alimento, 50, proveedor);
-        Pedido pedidoMedicamento = new Pedido(medicamento, 25, proveedor);
-        Pedido pedidoMaterialLimpieza = new Pedido(materialLimpieza, 100, proveedor);
+        Pedido pedidoAlimento = new Pedido(Alimento, 50, proveedor);
+        Pedido pedidoMedicamento = new Pedido(Medicamento, 25, proveedor);
+        Pedido pedidoMaterialLimpieza = new Pedido(Equipamiento, 100, proveedor);
 
         AdministracionRecursos administracionRecursos = new AdministracionRecursos();
-        administracionRecursos.agregarRecurso(alimento);
-        administracionRecursos.agregarRecurso(medicamento);
-        administracionRecursos.agregarRecurso(materialLimpieza);
+        administracionRecursos.agregarRecurso(Alimento);
+        administracionRecursos.agregarRecurso(Medicamento);
+        administracionRecursos.agregarRecurso(Equipamiento);
         administracionRecursos.agregarProveedor(proveedor);
         administracionRecursos.agregarPedido(pedidoAlimento);
         administracionRecursos.agregarPedido(pedidoMedicamento);
