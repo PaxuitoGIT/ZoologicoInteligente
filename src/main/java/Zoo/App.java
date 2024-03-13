@@ -23,19 +23,34 @@ public class App {
         AnimalTerrestres canguro = new AnimalTerrestres("Mamífero", "Canguro", "Hierba", "Terrestre", "Tranquilo", "Saludable", "7", true, true, true);
         AnimalTerrestres koala = new AnimalTerrestres("Mamífero", "Koala", "Hojas de Eucalipto", "Terrestre", "Tranquilo", "Saludable", "8", true, true, true);
 
+        // Crearemos las instancias de los animales acuáticos
+        AnimalAcuatico Dorado = new AnimalAcuatico("Pez", "Dorado", "Algas", "Acuatico", "Tranquilo", "Saludable", "2", true, true, true, "Dulce");
+        AnimalAcuatico delfin = new AnimalAcuatico("Mamífero", "Delfín", "Pescado", "Acuático", "Tranquilo", "Saludable", "9", true, true, true, "Salado");
+        AnimalAcuatico ballena = new AnimalAcuatico("Mamífero", "Ballena", "Krill", "Acuático", "Tranquilo", "Saludable", "10", true, true, true, "Salado");
+        AnimalAcuatico nutria = new AnimalAcuatico("Mamífero", "Nutria", "Pescado", "Acuático", "Tranquilo", "Saludable", "11", true, true, true, "Dulce");
+        AnimalAcuatico tiburon = new AnimalAcuatico("Pez", "Tiburón", "Pescado", "Acuático", "Agresivo", "Saludable", "12", true, true, true, "Salado");
+        AnimalAcuatico mantarraya = new AnimalAcuatico("Pez", "Mantarraya", "Plancton", "Acuático", "Tranquilo", "Saludable", "13", true, true, true, "Salado");
 
-        AnimalAcuatico animalAcuatico = new AnimalAcuatico("Pez", "Dorado", "Algas", "Acuatico", "Tranquilo", "Saludable", "2", true, true, true, "Dulce");
+        // Crearemos las instancias de los animales de aviario
         AnimalAviario animalAviario = new AnimalAviario("Ave", "Canario", "Semillas", "Aviario", "Tranquilo", "Saludable", "3", true, true, true, "Canario");
 
         // Aquí crearemos la lista de animales y hábitats
         List<Animal> animales = new ArrayList<>();
+        // Terrestres
         animales.add(tigre);
         animales.add(leon);
         animales.add(mono);
         animales.add(gorila);
         animales.add(canguro);
         animales.add(koala);
-        animales.add(animalAcuatico);
+        // Acuáticos
+        animales.add(Dorado);
+        animales.add(delfin);
+        animales.add(ballena);
+        animales.add(nutria);
+        animales.add(tiburon);
+        animales.add(mantarraya);
+        // Aviario
         animales.add(animalAviario);
 
         List<Habitat> habitats = new ArrayList<>();
@@ -46,6 +61,8 @@ public class App {
         // Crearemos las instancias de los tours aquí
         Tour tourNinos = new TourNinos();
         Tour tourAmanteMamiferos = new TourAmanteMamiferos();
+        Tour tourAmanteAcuaticos = new TourAmanteAcuaticos();
+        Tour tourAmanteAviario = new TourAmanteAviario();
 
         //Aquí el quiosco para el visitante
         Quiosco quiosco = new Quiosco(animales, habitats);
@@ -313,6 +330,12 @@ public class App {
                                     break;
                                 case 2:
                                     tourAmanteMamiferos.realizarTour();
+                                    break;
+                                case 3:
+                                    tourAmanteAcuaticos.realizarTour();
+                                    break;
+                                case 4:
+                                    tourAmanteAviario.realizarTour();
                                     break;
                                 default:
                                     System.out.println("Opción no válida. Por favor, intente de nuevo.");
