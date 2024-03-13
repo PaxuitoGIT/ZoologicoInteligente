@@ -11,9 +11,15 @@ import java.util.*;
 public class App {
     public static void main(String[] args) {
         // Crearemos las instancias del hábitat aquí
-        Acuatico acuatico = new Acuatico(25, 80, true, "Acuático", "acuatico", "Habitat acuático", true, 10.0);
-        Terrestre terrestre = new Terrestre(30, 60, true, "Terrestre", "terrestre", "Habitat terrestre", true);
-        Aviario aviario = new Aviario(20, 70, true, "Aviario", "aviario", "Habitat aviario", true, 15.0);
+        Acuatico habitatMarinos = new Acuatico(30, 70, true, "Acuatico", "Habitat Marinos", "Habitat para animales marinos", true, 15.0);
+        Acuatico habitatAguaDulce = new Acuatico(25, 75, true, "Acuatico", "Habitat Agua Dulce", "Habitat para animales de agua dulce", true, 10.0);
+        Acuatico habitatAguaSalada = new Acuatico(35, 65, true, "Acuatico", "Habitat Agua Salada", "Habitat para animales de agua salada", true, 20.0);
+        Terrestre habitatFelinos = new Terrestre(40, 60, true, "Terrestre", "Habitat Felinos", "Habitat para grandes felinos", true);
+        Terrestre habitatPrimates = new Terrestre(35, 70, true, "Terrestre", "Habitat Primates", "Habitat para primates", true);
+        Terrestre habitatMarsupiales = new Terrestre(30, 65, true, "Terrestre", "Habitat Marsupiales", "Habitat para marsupiales", true);
+        Aviario habitatAvesRapaces = new Aviario(20, 70, true, "Aviario", "Habitat Aves Rapaces", "Habitat para aves rapaces", true, 15.0);
+        Aviario habitatPajarosExoticos = new Aviario(25, 75, true, "Aviario", "Habitat Pajaros Exoticos", "Habitat para pájaros exóticos", true, 10.0);
+        Aviario habitatPajarosAcuaticos = new Aviario(30, 65, true, "Aviario", "Habitat Pajaros Acuaticos", "Habitat para pájaros acuáticos", true, 20.0);
 
         // Crearemos las instancias de los animales terrestres aquí
         AnimalTerrestres tigre = new AnimalTerrestres("Mamífero", "Tigre", "Carne", "Terrestre", "Agresivo", "Saludable", "1", true, true, true);
@@ -64,9 +70,15 @@ public class App {
         animales.add(flamenco);
 
         List<Habitat> habitats = new ArrayList<>();
-        habitats.add(terrestre);
-        habitats.add(acuatico);
-        habitats.add(aviario);
+        habitats.add(habitatFelinos);
+        habitats.add(habitatPrimates);
+        habitats.add(habitatMarsupiales);
+        habitats.add(habitatMarinos);
+        habitats.add(habitatAguaDulce);
+        habitats.add(habitatAguaSalada);
+        habitats.add(habitatAvesRapaces);
+        habitats.add(habitatPajarosExoticos);
+        habitats.add(habitatPajarosAcuaticos);
 
         // Crearemos las instancias de los tours aquí
         Tour tourNinos = new TourNinos();
@@ -100,16 +112,38 @@ public class App {
         Camara camara = new Camara("Entrada");
         Sensor sensor = new Sensor("Entrada");
 
-        // Aquí el monitoreo para el empleado
+        // Aquí el monitoreo de los hábitats para el empleado
         Monitoreo monitoreo = new Monitoreo();
 
-        monitoreo.configurarHabitat(terrestre, 30, 60, true);
-        monitoreo.registrarHabitat(acuatico);
-        monitoreo.configurarAcuatico(acuatico, true, 10.0);
-        monitoreo.registrarHabitat(terrestre);
-        monitoreo.configurarTerrestre(terrestre, true, "Arenoso");
-        monitoreo.registrarHabitat(aviario);
-        monitoreo.configurarAviario(aviario, true, 15.0);
+        monitoreo.configurarHabitat(habitatFelinos, 40, 60, true);
+        monitoreo.registrarHabitat(habitatFelinos);
+        monitoreo.configurarTerrestre(habitatFelinos, true, "Arenoso");
+        monitoreo.configurarHabitat(habitatPrimates, 35, 70, true);
+        monitoreo.registrarHabitat(habitatPrimates);
+        monitoreo.configurarTerrestre(habitatPrimates, true, "Arenoso");
+        monitoreo.configurarHabitat(habitatMarsupiales, 30, 65, true);
+        monitoreo.registrarHabitat(habitatMarsupiales);
+        monitoreo.configurarTerrestre(habitatMarsupiales, true, "Arenoso");
+
+        monitoreo.configurarHabitat(habitatMarinos, 30, 70, true);
+        monitoreo.registrarHabitat(habitatMarinos);
+        monitoreo.configurarAcuatico(habitatMarinos, true, 15.0);
+        monitoreo.configurarHabitat(habitatAguaDulce, 25, 75, true);
+        monitoreo.registrarHabitat(habitatAguaDulce);
+        monitoreo.configurarAcuatico(habitatAguaDulce, true, 10.0);
+        monitoreo.configurarHabitat(habitatAguaSalada, 35, 65, true);
+        monitoreo.registrarHabitat(habitatAguaSalada);
+        monitoreo.configurarAcuatico(habitatAguaSalada, true, 20.0);
+
+        monitoreo.configurarHabitat(habitatAvesRapaces, 20, 70, true);
+        monitoreo.registrarHabitat(habitatAvesRapaces);
+        monitoreo.configurarAviario(habitatAvesRapaces, true, 15.0);
+        monitoreo.configurarHabitat(habitatPajarosExoticos, 25, 75, true);
+        monitoreo.registrarHabitat(habitatPajarosExoticos);
+        monitoreo.configurarAviario(habitatPajarosExoticos, true, 10.0);
+        monitoreo.configurarHabitat(habitatPajarosAcuaticos, 30, 65, true);
+        monitoreo.registrarHabitat(habitatPajarosAcuaticos);
+        monitoreo.configurarAviario(habitatPajarosAcuaticos, true, 20.0);
 
         // El menú principal
         Scanner scanner = new Scanner(System.in);
