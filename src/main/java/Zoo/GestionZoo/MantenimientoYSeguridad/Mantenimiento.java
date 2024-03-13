@@ -1,7 +1,6 @@
 package Zoo.GestionZoo.MantenimientoYSeguridad;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Mantenimiento {
@@ -13,11 +12,6 @@ public class Mantenimiento {
 
     public void programarTarea(Tarea tarea) {
         this.tareas.add(tarea);
-    }
-
-    public void completarTarea(Tarea tarea) {
-        tarea.setEstado("Completada");
-        tarea.setFechaFinalizacion(new Date());
     }
 
     public List<Tarea> obtenerTareasPendientes() {

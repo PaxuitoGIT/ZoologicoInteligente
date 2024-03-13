@@ -7,7 +7,7 @@ public class Tarea {
     private final String descripcion;
     private final Date fechaProgramada;
     private final boolean esUrgente;
-    private String estado;
+    private final String estado;
     private Date fechaFinalizacion;
 
     public Tarea(String descripcion, Date fechaProgramada, boolean esUrgente, String estado) {
@@ -31,10 +31,6 @@ public class Tarea {
 
     public String getEstado() {
         return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
     }
 
     public Date getFechaFinalizacion() {

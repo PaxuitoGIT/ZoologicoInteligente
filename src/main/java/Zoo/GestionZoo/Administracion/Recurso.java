@@ -2,7 +2,7 @@ package Zoo.GestionZoo.Administracion;
 
 public class Recurso {
     private String nombre;
-    private int cantidad;
+    private final int cantidad;
 
     public Recurso(String nombre, int cantidad) {
         this.nombre = nombre;
@@ -16,9 +16,6 @@ public class Recurso {
     }
     public int getCantidad() {
         return cantidad;
-    }
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
     }
     public static class Alimento extends Recurso {
         public Alimento(String nombre, int cantidad) {

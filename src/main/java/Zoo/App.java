@@ -36,27 +36,7 @@ public class App {
 
         Quiosco quiosco = new Quiosco(animales, habitats);
 
-        Recurso.Alimento Alimento = new Recurso.Alimento("Alimento", 100);
-        Recurso.Medicamento Medicamento = new Recurso.Medicamento("Medicamento", 50);
-        Recurso.Equipamiento Equipamiento = new Recurso.Equipamiento("Material de limpieza", 200);
-
-        Proveedor proveedor = new Proveedor("Proveedor 1");
-        proveedor.agregarRecurso(Alimento);
-        proveedor.agregarRecurso(Medicamento);
-        proveedor.agregarRecurso(Equipamiento);
-
-        Pedido pedidoAlimento = new Pedido(Alimento, 50, proveedor);
-        Pedido pedidoMedicamento = new Pedido(Medicamento, 25, proveedor);
-        Pedido pedidoMaterialLimpieza = new Pedido(Equipamiento, 100, proveedor);
-
-        AdministracionRecursos administracionRecursos = new AdministracionRecursos();
-        administracionRecursos.agregarRecurso(Alimento);
-        administracionRecursos.agregarRecurso(Medicamento);
-        administracionRecursos.agregarRecurso(Equipamiento);
-        administracionRecursos.agregarProveedor(proveedor);
-        administracionRecursos.agregarPedido(pedidoAlimento);
-        administracionRecursos.agregarPedido(pedidoMedicamento);
-        administracionRecursos.agregarPedido(pedidoMaterialLimpieza);
+        AdministracionRecursos administracionRecursos = getAdministracionRecursos();
 
         Mantenimiento mantenimiento = new Mantenimiento();
 
@@ -186,8 +166,8 @@ public class App {
                             break;
                         case 2:
                             System.out.println("Proveedores:");
-                            for (Proveedor proveedor0 : administracionRecursos.getProveedores()) {
-                                System.out.println("Nombre: " + proveedor.getNombre());
+                            for (Proveedor proveedor1: administracionRecursos.getProveedores()) {
+                                System.out.println("Nombre: " + proveedor1.getNombre());
                             }
                             break;
                         case 3:
@@ -229,5 +209,30 @@ public class App {
                     break;
             }
         }
+    }
+
+    private static AdministracionRecursos getAdministracionRecursos() {
+        Recurso.Alimento Alimento = new Recurso.Alimento("Alimento", 100);
+        Recurso.Medicamento Medicamento = new Recurso.Medicamento("Medicamento", 50);
+        Recurso.Equipamiento Equipamiento = new Recurso.Equipamiento("Material de limpieza", 200);
+
+        Proveedor proveedor = new Proveedor("Proveedor 1");
+        proveedor.agregarRecurso(Alimento);
+        proveedor.agregarRecurso(Medicamento);
+        proveedor.agregarRecurso(Equipamiento);
+
+        Pedido pedidoAlimento = new Pedido(Alimento, 50, proveedor);
+        Pedido pedidoMedicamento = new Pedido(Medicamento, 25, proveedor);
+        Pedido pedidoMaterialLimpieza = new Pedido(Equipamiento, 100, proveedor);
+
+        AdministracionRecursos administracionRecursos = new AdministracionRecursos();
+        administracionRecursos.agregarRecurso(Alimento);
+        administracionRecursos.agregarRecurso(Medicamento);
+        administracionRecursos.agregarRecurso(Equipamiento);
+        administracionRecursos.agregarProveedor(proveedor);
+        administracionRecursos.agregarPedido(pedidoAlimento);
+        administracionRecursos.agregarPedido(pedidoMedicamento);
+        administracionRecursos.agregarPedido(pedidoMaterialLimpieza);
+        return administracionRecursos;
     }
 }
