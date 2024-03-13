@@ -6,10 +6,7 @@ import Zoo.GestionZoo.Visitantes.*;
 import Zoo.GestionZoo.Administracion.*;
 import Zoo.GestionZoo.MantenimientoYSeguridad.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Date;
+import java.util.*;
 
 public class App {
     public static void main(String[] args) {
@@ -83,7 +80,16 @@ public class App {
             System.out.println("2.Visitante");
             System.out.println("Seleccione una opción: ");
 
-            int opcion = scanner.nextInt();
+            int opcion;
+
+            try {
+                opcion = scanner.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Opción no válida. Por favor, intente de nuevo.");
+                System.out.println();
+                scanner.next();
+                continue;
+            }
 
             if (opcion == 1) {
                 System.out.println("Ingrese la contraseña: ");
@@ -106,8 +112,16 @@ public class App {
                     System.out.print("Seleccione una opción: ");
                     System.out.println();
 
-                    int opcionEmpleado = scanner.nextInt();
+                    int opcionEmpleado;
 
+                    try {
+                        opcionEmpleado = scanner.nextInt();
+                    } catch (InputMismatchException e) {
+                        System.out.println("Opción no válida. Por favor, intente de nuevo.");
+                        System.out.println();
+                        scanner.next();
+                        continue;
+                    }
                     switch (opcionEmpleado) {
                         case 1:
                             monitoreo.analizarHabitats();
@@ -119,7 +133,16 @@ public class App {
                             System.out.print("Seleccione una opción: ");
                             System.out.println();
 
-                            int opcionAnimales = scanner.nextInt();
+                            int opcionAnimales;
+
+                            try {
+                                opcionAnimales = scanner.nextInt();
+                            } catch (InputMismatchException e) {
+                                System.out.println("Opción no válida. Por favor, intente de nuevo.");
+                                System.out.println();
+                                scanner.next();
+                                continue;
+                            }
 
                             switch (opcionAnimales) {
                                 case 1:
@@ -162,7 +185,16 @@ public class App {
                             System.out.print("Seleccione una opción: ");
                             System.out.println();
 
-                            int opcionRecursos = scanner.nextInt();
+                            int opcionRecursos;
+
+                            try {
+                                opcionRecursos = scanner.nextInt();
+                            } catch (InputMismatchException e) {
+                                System.out.println("Opción no válida. Por favor, intente de nuevo.");
+                                System.out.println();
+                                scanner.next();
+                                continue;
+                            }
 
                             switch (opcionRecursos) {
                                 case 1:
@@ -228,7 +260,16 @@ public class App {
                     System.out.print("Seleccione una opción: ");
                 System.out.println();
 
-                    int opcionVisitante = scanner.nextInt();
+                    int opcionVisitante;
+
+                try {
+                    opcionVisitante = scanner.nextInt();
+                } catch (InputMismatchException e) {
+                    System.out.println("Opción no válida. Por favor, intente de nuevo.");
+                    System.out.println();
+                    scanner.next();
+                    continue;
+                }
 
                     switch (opcionVisitante) {
                         case 1:
@@ -237,7 +278,16 @@ public class App {
                             System.out.print("Seleccione una opción: ");
                             System.out.println();
 
-                            int opcionTour = scanner.nextInt();
+                            int opcionTour;
+
+                            try {
+                                opcionTour = scanner.nextInt();
+                            } catch (InputMismatchException e) {
+                                System.out.println("Opción no válida. Por favor, intente de nuevo.");
+                                System.out.println();
+                                scanner.next();
+                                continue;
+                            }
 
                             switch (opcionTour) {
                                 case 1:
