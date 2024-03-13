@@ -71,145 +71,201 @@ public class App {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("1. Analizar hábitats");
-            System.out.println("2. Interactuar con animales");
-            System.out.println("3. Realizar un tour");
-            System.out.println("4. Mostrar información de un animal");
-            System.out.println("5. Administrar recursos");
-            System.out.println("6. Ver tareas de mantenimiento");
-            System.out.println("7. Monitorear seguridad");
-            System.out.println("9. Salir");
-            System.out.print("Seleccione una opción: ");
+            System.out.println("1.Empleado");
+            System.out.println("2.Visitante");
+            System.out.println("Seleccione una opción: ");
+            System.out.println();
 
             int opcion = scanner.nextInt();
 
-            switch (opcion) {
-                case 1:
-                    monitoreo.analizarHabitats();
-                    break;
-                case 2:
-                    System.out.println("1. Interactuar con animales terrestres");
-                    System.out.println("2. Interactuar con animales acuáticos");
-                    System.out.println("3. Interactuar con animales de aviario");
+            if (opcion == 1) {
+                System.out.println("Ingrese la contraseña: ");
+                String contrasena = scanner.next();
+                if (!contrasena.equals("admin")) {
+                    System.out.println("Contraseña incorrecta. Saliendo...");
+                    System.out.println();
+                    continue;
+                }
+
+                while (true) {
+
+                    System.out.println();
+                    System.out.println("1. Analizar Hábitats");
+                    System.out.println("2. Interactuar con animales");
+                    System.out.println("3. Administrar recursos");
+                    System.out.println("4. Ver tareas de mantenimiento");
+                    System.out.println("5. Ver cámaras y sensores");
+                    System.out.println("9. Salir");
                     System.out.print("Seleccione una opción: ");
+                    System.out.println();
 
-                    int opcionAnimales = scanner.nextInt();
+                    int opcionEmpleado = scanner.nextInt();
 
-                    switch (opcionAnimales) {
+                    switch (opcionEmpleado) {
                         case 1:
-                            System.out.println("Has seleccionado el animal terrestre: " + animalTerrestres.getNombre());
-                            System.out.println("Especie: " + animalTerrestres.getEspecie());
-                            System.out.println("Alimentación: " + animalTerrestres.getAlimentacion());
-                            System.out.println("Hábitat: " + animalTerrestres.getHabitat());
-                            System.out.println("Comportamiento: " + animalTerrestres.getComportamiento());
-                            System.out.println("Salud: " + animalTerrestres.getSalud());
+                            monitoreo.analizarHabitats();
                             break;
                         case 2:
-                            System.out.println("Has seleccionado el animal acuático: " + animalAcuatico.getNombre());
-                            System.out.println("Especie: " + animalAcuatico.getEspecie());
-                            System.out.println("Alimentación: " + animalAcuatico.getAlimentacion());
-                            System.out.println("Hábitat: " + animalAcuatico.getHabitat());
-                            System.out.println("Comportamiento: " + animalAcuatico.getComportamiento());
-                            System.out.println("Salud: " + animalAcuatico.getSalud());
-                            break;
-                        case 3:
-                            System.out.println("Has seleccionado el animal de aviario: " + animalAviario.getNombre());
-                            System.out.println("Especie: " + animalAviario.getEspecie());
-                            System.out.println("Alimentación: " + animalAviario.getAlimentacion());
-                            System.out.println("Hábitat: " + animalAviario.getHabitat());
-                            System.out.println("Comportamiento: " + animalAviario.getComportamiento());
-                            System.out.println("Salud: " + animalAviario.getSalud());
-                            break;
-                        default:
-                            System.out.println("Opción no válida. Por favor, intente de nuevo.");
-                            break;
-                    }
-                    break;
-                case 3:
-                    System.out.println("1. Tour para niños");
-                    System.out.println("2. Tour para amantes de mamíferos");
-                    System.out.print("Seleccione una opción: ");
+                            System.out.println("1. Interactuar con animales terrestres");
+                            System.out.println("2. Interactuar con animales acuáticos");
+                            System.out.println("3. Interactuar con animales de aviario");
+                            System.out.print("Seleccione una opción: ");
+                            System.out.println();
 
-                    int opcionTour = scanner.nextInt();
+                            int opcionAnimales = scanner.nextInt();
 
-                    switch (opcionTour) {
-                        case 1:
-                            tourNinos.realizarTour();
-                            break;
-                        case 2:
-                            tourAmanteMamiferos.realizarTour();
-                            break;
-                        default:
-                            System.out.println("Opción no válida. Por favor, intente de nuevo.");
-                            break;
-                    }
-                    break;
-                case 4:
-                    System.out.print("Ingrese el ID del animal: ");
-                    String idAnimal = scanner.next();
-                    quiosco.mostrarInformacionAnimalCompleta(idAnimal);
-                    break;
-                case 5:
-                    System.out.println("1. Ver recursos");
-                    System.out.println("2. Ver proveedores");
-                    System.out.println("3. Ver pedidos");
-                    System.out.print("Seleccione una opción: ");
-
-                    int opcionRecursos = scanner.nextInt();
-
-                    switch (opcionRecursos) {
-                        case 1:
-                            System.out.println("Recursos:");
-                            for (Recurso recurso : administracionRecursos.getRecursos()) {
-                                System.out.println("Nombre: " + recurso.getNombre() + ", Cantidad: " + recurso.getCantidad());
-                            }
-                            break;
-                        case 2:
-                            System.out.println("Proveedores:");
-                            for (Proveedor proveedor1: administracionRecursos.getProveedores()) {
-                                System.out.println("Nombre: " + proveedor1.getNombre());
+                            switch (opcionAnimales) {
+                                case 1:
+                                    System.out.println("Has seleccionado el animal terrestre: " + animalTerrestres.getNombre());
+                                    System.out.println("Especie: " + animalTerrestres.getEspecie());
+                                    System.out.println("Alimentación: " + animalTerrestres.getAlimentacion());
+                                    System.out.println("Hábitat: " + animalTerrestres.getHabitat());
+                                    System.out.println("Comportamiento: " + animalTerrestres.getComportamiento());
+                                    System.out.println("Salud: " + animalTerrestres.getSalud());
+                                    System.out.println();
+                                    break;
+                                case 2:
+                                    System.out.println("Has seleccionado el animal acuático: " + animalAcuatico.getNombre());
+                                    System.out.println("Especie: " + animalAcuatico.getEspecie());
+                                    System.out.println("Alimentación: " + animalAcuatico.getAlimentacion());
+                                    System.out.println("Hábitat: " + animalAcuatico.getHabitat());
+                                    System.out.println("Comportamiento: " + animalAcuatico.getComportamiento());
+                                    System.out.println("Salud: " + animalAcuatico.getSalud());
+                                    System.out.println();
+                                    break;
+                                case 3:
+                                    System.out.println("Has seleccionado el animal de aviario: " + animalAviario.getNombre());
+                                    System.out.println("Especie: " + animalAviario.getEspecie());
+                                    System.out.println("Alimentación: " + animalAviario.getAlimentacion());
+                                    System.out.println("Hábitat: " + animalAviario.getHabitat());
+                                    System.out.println("Comportamiento: " + animalAviario.getComportamiento());
+                                    System.out.println("Salud: " + animalAviario.getSalud());
+                                    System.out.println();
+                                    break;
+                                default:
+                                    System.out.println("Opción no válida. Por favor, intente de nuevo.");
+                                    System.out.println();
+                                    break;
                             }
                             break;
                         case 3:
-                            System.out.println("Pedidos:");
-                            for (Pedido pedido : administracionRecursos.getPedidos()) {
-                                System.out.println("Recurso: " + pedido.getRecurso().getNombre() + ", Cantidad: " + pedido.getCantidad() + ", Proveedor: " + pedido.getProveedor().getNombre());
+                            System.out.println("1. Ver recursos");
+                            System.out.println("2. Ver proveedores");
+                            System.out.println("3. Ver pedidos");
+                            System.out.print("Seleccione una opción: ");
+                            System.out.println();
+
+                            int opcionRecursos = scanner.nextInt();
+
+                            switch (opcionRecursos) {
+                                case 1:
+                                    System.out.println();
+                                    System.out.println("Recursos:");
+                                    for (Recurso recurso : administracionRecursos.getRecursos()) {
+                                        System.out.println("Nombre: " + recurso.getNombre() + ", Cantidad: " + recurso.getCantidad());
+                                    }
+                                    break;
+                                case 2:
+                                    System.out.println();
+                                    System.out.println("Proveedores:");
+                                    for (Proveedor proveedor1 : administracionRecursos.getProveedores()) {
+                                        System.out.println("Nombre: " + proveedor1.getNombre());
+                                    }
+                                    break;
+                                case 3:
+                                    System.out.println();
+                                    System.out.println("Pedidos:");
+                                    for (Pedido pedido : administracionRecursos.getPedidos()) {
+                                        System.out.println("Recurso: " + pedido.getRecurso().getNombre() + ", Cantidad: " + pedido.getCantidad() + ", Proveedor: " + pedido.getProveedor().getNombre());
+                                    }
+                                    break;
+                                default:
+                                    System.out.println("Opción no válida. Por favor, intente de nuevo.");
+                                    System.out.println();
+                                    break;
                             }
                             break;
+                        case 4:
+                            List<Tarea> tareasPendientes = mantenimiento.obtenerTareasPendientes();
+                            System.out.println("Tareas de mantenimiento pendientes:");
+                            for (Tarea tarea : tareasPendientes) {
+                                System.out.println("Descripción: " + tarea.getDescripcion());
+                                System.out.println("Fecha programada: " + tarea.getFechaProgramada());
+                                System.out.println("Es urgente:" + (tarea.isEsUrgente() ? "Sí" : "No"));
+                                System.out.println("Estado: " + tarea.getEstado());
+                                System.out.println("Fecha de finalización: " + tarea.getFechaFinalizacion());
+                                System.out.println();
+                            }
+                            break;
+                        case 5:
+                            System.out.println("Cámara y sensor activados");
+                            System.out.println();
+                            seguridad.monitorZoo();
+                            camara.activar();
+                            sensor.activar();
+                            System.out.println();
+                            break;
+                        case 9:
+                            System.out.println("Saliendo...");
+                            return;
                         default:
                             System.out.println("Opción no válida. Por favor, intente de nuevo.");
+                            System.out.println();
                             break;
                     }
-                    break;
-                case 6:
-                    List<Tarea> tareasPendientes = mantenimiento.obtenerTareasPendientes();
-                    System.out.println("Tareas de mantenimiento pendientes:");
-                    for (Tarea tarea : tareasPendientes) {
-                        System.out.println("Descripción: " + tarea.getDescripcion());
-                        System.out.println("Fecha programada: " + tarea.getFechaProgramada());
-                        System.out.println("Es urgente:" + (tarea.isEsUrgente() ? "Sí" : "No"));
-                        System.out.println("Estado: " + tarea.getEstado());
-                        System.out.println("Fecha de finalización: " + tarea.getFechaFinalizacion());
-                        System.out.println();
+                }
+            }  else if (opcion == 2) {
+                    System.out.println("1. Realizar tour");
+                    System.out.println("2. Mostrar información de animales");
+                    System.out.println("9. Salir");
+                    System.out.print("Seleccione una opción: ");
+                System.out.println();
+
+                    int opcionVisitante = scanner.nextInt();
+
+                    switch (opcionVisitante) {
+                        case 1:
+                            System.out.println("1. Tour para niños");
+                            System.out.println("2. Tour para amantes de mamíferos");
+                            System.out.print("Seleccione una opción: ");
+                            System.out.println();
+
+                            int opcionTour = scanner.nextInt();
+
+                            switch (opcionTour) {
+                                case 1:
+                                    tourNinos.realizarTour();
+                                    break;
+                                case 2:
+                                    tourAmanteMamiferos.realizarTour();
+                                    break;
+                                default:
+                                    System.out.println("Opción no válida. Por favor, intente de nuevo.");
+                                    System.out.println();
+                                    break;
+                            }
+                            break;
+                        case 2:
+                            System.out.print("Ingrese el ID del animal: ");
+                            String idAnimal = scanner.next();
+                            System.out.println();
+                            quiosco.mostrarInformacionAnimalCompleta(idAnimal);
+                            System.out.println();
+                            break;
+                        case 9:
+                            System.out.println("Saliendo...");
+                            return;
+                        default:
+                            System.out.println("Opción no válida. Por favor, intente de nuevo.");
+                            System.out.println();
+                            break;
                     }
-                    break;
-                case 7:
-                    System.out.println("Cámara y sensor activados");
-                    System.out.println();
-                    seguridad.monitorZoo();
-                    camara.activar();
-                    sensor.activar();
-                    System.out.println();
-                    break;
-                case 9:
-                    System.out.println("Saliendo...");
-                    return;
-                default:
+                } else {
                     System.out.println("Opción no válida. Por favor, intente de nuevo.");
-                    break;
+                System.out.println();
+                }
             }
         }
-    }
 
     private static AdministracionRecursos getAdministracionRecursos() {
         Recurso.Alimento Alimento = new Recurso.Alimento("Alimento", 100);
