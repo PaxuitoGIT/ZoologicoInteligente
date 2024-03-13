@@ -4,6 +4,7 @@ import Zoo.GestionHabitat.*;
 import Zoo.Animales.*;
 import Zoo.GestionZoo.*;
 import Zoo.GestionZoo.Visitantes.*;
+import Zoo.GestionZoo.Administracion.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +34,31 @@ public class App {
         habitats.add(aviario);
 
         Quiosco quiosco = new Quiosco(animales, habitats);
+
+        Recurso alimento = new Recurso("Alimento", 100);
+        Recurso medicamento = new Recurso("Medicamento", 50);
+        Recurso materialLimpieza = new Recurso("Material de limpieza", 200);
+
+        Proveedor proveedor = new Proveedor("Proveedor 1");
+        proveedor.agregarRecurso(alimento);
+        proveedor.agregarRecurso(medicamento);
+        proveedor.agregarRecurso(materialLimpieza);
+
+        Pedido pedidoAlimento = new Pedido(alimento, 50, proveedor);
+        Pedido pedidoMedicamento = new Pedido(medicamento, 25, proveedor);
+        Pedido pedidoMaterialLimpieza = new Pedido(materialLimpieza, 100, proveedor);
+
+        AdministracionRecursos administracionRecursos = new AdministracionRecursos();
+        administracionRecursos.agregarRecurso(alimento);
+        administracionRecursos.agregarRecurso(medicamento);
+        administracionRecursos.agregarRecurso(materialLimpieza);
+        administracionRecursos.agregarProveedor(proveedor);
+        administracionRecursos.agregarPedido(pedidoAlimento);
+        administracionRecursos.agregarPedido(pedidoMedicamento);
+        administracionRecursos.agregarPedido(pedidoMaterialLimpieza);
+
+
+
         Monitoreo monitoreo = new Monitoreo();
 
         monitoreo.configurarHabitat(terrestre, 30, 60, true);
@@ -50,6 +76,7 @@ public class App {
             System.out.println("2. Interactuar con animales");
             System.out.println("3. Realizar un tour");
             System.out.println("4. Mostrar información de un animal");
+            System.out.println("5. Administrar recursos");
             System.out.println("9. Salir");
             System.out.print("Seleccione una opción: ");
 
@@ -120,6 +147,38 @@ public class App {
                     System.out.print("Ingrese el ID del animal: ");
                     String idAnimal = scanner.next();
                     quiosco.mostrarInformacionAnimalCompleta(idAnimal);
+                    break;
+                case 5:
+                    System.out.println("1. Ver recursos");
+                    System.out.println("2. Ver proveedores");
+                    System.out.println("3. Ver pedidos");
+                    System.out.print("Seleccione una opción: ");
+
+                    int opcionRecursos = scanner.nextInt();
+
+                    switch (opcionRecursos) {
+                        case 1:
+                            System.out.println("Recursos:");
+                            for (Recurso recurso : administracionRecursos.getRecursos()) {
+                                System.out.println("Nombre: " + recurso.getNombre() + ", Cantidad: " + recurso.getCantidad());
+                            }
+                            break;
+                        case 2:
+                            System.out.println("Proveedores:");
+                            for (Proveedor proveedor2 : administracionRecursos.getProveedores()) {
+                                System.out.println("Nombre: " + proveedor.getNombre());
+                            }
+                            break;
+                        case 3:
+                            System.out.println("Pedidos:");
+                            for (Pedido pedido : administracionRecursos.getPedidos()) {
+                                System.out.println("Recurso: " + pedido.getRecurso().getNombre() + ", Cantidad: " + pedido.getCantidad() + ", Proveedor: " + pedido.getProveedor().getNombre());
+                            }
+                            break;
+                        default:
+                            System.out.println("Opción no válida. Por favor, intente de nuevo.");
+                            break;
+                    }
                     break;
                 case 9:
                     System.out.println("Saliendo...");
