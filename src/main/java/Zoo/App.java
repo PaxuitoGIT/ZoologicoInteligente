@@ -32,7 +32,12 @@ public class App {
         AnimalAcuatico mantarraya = new AnimalAcuatico("Pez", "Mantarraya", "Plancton", "Acuático", "Tranquilo", "Saludable", "13", true, true, true, "Salado");
 
         // Crearemos las instancias de los animales de aviario
-        AnimalAviario animalAviario = new AnimalAviario("Ave", "Canario", "Semillas", "Aviario", "Tranquilo", "Saludable", "3", true, true, true, "Canario");
+        AnimalAviario aguila = new AnimalAviario("Ave", "Águila", "Carnes", "Aviario", "Agresivo", "Saludable", "14", true, true, true, "Águila");
+        AnimalAviario halcon = new AnimalAviario("Ave", "Halcón", "Carnes", "Aviario", "Agresivo", "Saludable", "15", true, true, true, "Halcón");
+        AnimalAviario loro = new AnimalAviario("Ave", "Loro", "Frutas y Semillas", "Aviario", "Tranquilo", "Saludable", "16", true, true, true, "Loro");
+        AnimalAviario tucan = new AnimalAviario("Ave", "Tucán", "Frutas", "Aviario", "Tranquilo", "Saludable", "17", true, true, true, "Tucán");
+        AnimalAviario pato = new AnimalAviario("Ave", "Pato", "Plantas y Pequeños Insectos", "Aviario", "Tranquilo", "Saludable", "18", true, true, true, "Pato");
+        AnimalAviario flamenco = new AnimalAviario("Ave", "Flamenco", "Algas y Crustáceos", "Aviario", "Tranquilo", "Saludable", "19", true, true, true, "Flamenco");
 
         // Aquí crearemos la lista de animales y hábitats
         List<Animal> animales = new ArrayList<>();
@@ -51,7 +56,12 @@ public class App {
         animales.add(tiburon);
         animales.add(mantarraya);
         // Aviario
-        animales.add(animalAviario);
+        animales.add(aguila);
+        animales.add(halcon);
+        animales.add(loro);
+        animales.add(tucan);
+        animales.add(pato);
+        animales.add(flamenco);
 
         List<Habitat> habitats = new ArrayList<>();
         habitats.add(terrestre);
@@ -205,13 +215,19 @@ public class App {
                                     }
                                     break;
                                 case 3:
-                                    System.out.println("Has seleccionado el animal de aviario: " + animalAviario.getNombre());
-                                    System.out.println("Especie: " + animalAviario.getEspecie());
-                                    System.out.println("Alimentación: " + animalAviario.getAlimentacion());
-                                    System.out.println("Hábitat: " + animalAviario.getHabitat());
-                                    System.out.println("Comportamiento: " + animalAviario.getComportamiento());
-                                    System.out.println("Salud: " + animalAviario.getSalud());
-                                    System.out.println();
+                                    System.out.println("Animales de aviario:");
+                                    for (Animal animal : animales) {
+                                        if (animal instanceof AnimalAviario) {
+                                            AnimalAviario animalAviario = (AnimalAviario) animal;
+                                            System.out.println("Has seleccionado el animal de aviario: " + animalAviario.getNombre());
+                                            System.out.println("Especie: " + animalAviario.getEspecie());
+                                            System.out.println("Alimentación: " + animalAviario.getAlimentacion());
+                                            System.out.println("Hábitat: " + animalAviario.getHabitat());
+                                            System.out.println("Comportamiento: " + animalAviario.getComportamiento());
+                                            System.out.println("Salud: " + animalAviario.getSalud());
+                                            System.out.println();
+                                        }
+                                    }
                                     break;
                                 default:
                                     System.out.println("Opción no válida. Por favor, intente de nuevo.");
@@ -316,6 +332,8 @@ public class App {
                         case 1:
                             System.out.println("1. Tour para niños");
                             System.out.println("2. Tour para amantes de mamíferos");
+                            System.out.println("3. Tour para amantes de animales acuáticos");
+                            System.out.println("4. Tour para amantes de aviario");
                             System.out.print("Seleccione una opción: ");
                             System.out.println();
 
